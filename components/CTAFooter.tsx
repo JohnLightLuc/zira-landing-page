@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import AppStoreButtons from "./AppStoreButtons";
 
 export function CTAFooter() {
@@ -31,8 +32,9 @@ export function CTAFooter() {
             >
               Essai gratuit 14 jours
             </button>
-            <button
-              className="text-sm font-medium px-5 py-3 rounded-xl transition-colors"
+            <Link
+              href="/contact-us"
+              className="text-sm font-medium px-5 py-3 rounded-xl transition-colors no-underline"
               style={{
                 background: "transparent",
                 color: "var(--white-2)",
@@ -40,7 +42,7 @@ export function CTAFooter() {
               }}
             >
               Contacter l&apos;équipe
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -55,36 +57,33 @@ export function Footer() {
       style={{ borderTop: "1px solid var(--border)", background: "var(--navy)" }}
     >
       <div className="flex items-center gap-2.5">
-        <div
-          className="w-7 h-7 rounded-lg flex items-center justify-center"
-          style={{ background: "var(--blue)" }}
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-          </svg>
-        </div>
+        <Image src="/logo_ic.png" width={28} height={28} alt="Zira" className="rounded-lg" />
         <span
           className="text-sm font-bold"
           style={{ fontFamily: "'Space Grotesk', sans-serif", color: "var(--white-fleet)" }}
         >
-          FleetTrack
+          Zira
         </span>
       </div>
       <div className="flex gap-5">
-        {["Confidentialité", "Conditions", "Contact"].map((item) => (
-          <a
-            key={item}
-            href="#"
-            className="text-xs transition-colors hover:opacity-80"
+        {[
+          { label: "Confidentialité", href: "#" },
+          { label: "CGU", href: "/cgu" },
+          { label: "Contact", href: "/contact-us" },
+        ].map(({ label, href }) => (
+          <Link
+            key={label}
+            href={href}
+            className="text-xs transition-colors hover:opacity-80 no-underline"
             style={{ color: "var(--slate)" }}
           >
-            {item}
-          </a>
+            {label}
+          </Link>
         ))}
       </div>
       <AppStoreButtons size="sm" />
       <span className="text-xs" style={{ color: "var(--slate)" }}>
-        © 2025 FleetTrack · Tous droits réservés
+        © 2025 Zira · Tous droits réservés
       </span>
     </footer>
   );

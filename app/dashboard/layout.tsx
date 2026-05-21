@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const sideLinks = [
@@ -87,13 +88,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       >
         {/* Sidebar logo */}
         <Link href="/" className="flex items-center gap-2.5 px-5 py-5 no-underline" style={{ borderBottom: "1px solid var(--border)" }}>
-          <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: "var(--blue)" }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-            </svg>
-          </div>
+          <Image src="/logo_ic.png" width={28} height={28} alt="Zira" className="rounded-lg" />
           <span className="text-sm font-bold" style={{ color: "var(--white-fleet)", fontFamily: "'Space Grotesk', sans-serif" }}>
-            FleetTrack
+            Zira
           </span>
         </Link>
 
@@ -140,7 +137,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               AD
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-semibold truncate" style={{ color: "var(--white-fleet)" }}>Admin FleetTrack</p>
+              <p className="text-xs font-semibold truncate" style={{ color: "var(--white-fleet)" }}>Admin Zira</p>
               <p className="text-[11px] truncate" style={{ color: "var(--slate)" }}>admin@fleettrack.ci</p>
             </div>
             <Link href="/auth/login" style={{ color: "var(--slate)" }}>

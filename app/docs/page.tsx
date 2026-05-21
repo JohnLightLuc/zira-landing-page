@@ -46,7 +46,7 @@ export default function DocsPage() {
         <div className="mb-10">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--cyan)" }}>Documentation</p>
           <h1 className="text-3xl font-bold mb-3" style={{ color: "var(--white-fleet)", letterSpacing: "-1px", fontFamily: "'Space Grotesk', sans-serif" }}>
-            Centre d'aide FleetTrack
+            Centre d'aide Zira
           </h1>
           <p className="text-sm mb-6" style={{ color: "var(--slate-2)" }}>Guides, tutoriels et référence API pour tirer le meilleur de votre plateforme.</p>
 
@@ -104,7 +104,7 @@ export default function DocsPage() {
               Documentation API REST
             </h3>
             <p className="text-xs" style={{ color: "var(--slate-2)" }}>
-              Intégrez FleetTrack à vos outils métier via notre API complète.
+              Intégrez Zira à vos outils métier via notre API complète.
             </p>
           </div>
           <Link

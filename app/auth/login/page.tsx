@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function LoginPage() {
   return (
@@ -9,13 +10,9 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="flex items-center gap-3 justify-center mb-8">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "var(--blue)" }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-            </svg>
-          </div>
+          <Image src="/logo_ic.png" width={36} height={36} alt="Zira" className="rounded-xl" />
           <div>
-            <div className="font-bold text-base" style={{ color: "var(--white-fleet)", fontFamily: "'Space Grotesk', sans-serif" }}>FleetTrack</div>
+            <div className="font-bold text-base" style={{ color: "var(--white-fleet)", fontFamily: "'Space Grotesk', sans-serif" }}>Zira</div>
             <div className="text-[10px] font-medium tracking-widest uppercase" style={{ color: "var(--cyan)", marginTop: "-2px" }}>GPS Management</div>
           </div>
         </div>
