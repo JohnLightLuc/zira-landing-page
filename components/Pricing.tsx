@@ -3,48 +3,48 @@ import Link from "next/link";
 const plans = [
   {
     name: "Starter",
-    price: "29 000",
+    price: "5 000",
     period: "/ mois",
-    desc: "Pour les petites flottes qui démarrent",
-    vehicles: "Jusqu'à 10 véhicules",
-    features: ["Géolocalisation temps réel", "Historique 30 jours", "3 alertes configurables", "Rapport mensuel PDF", "Support email"],
-    cta: "Démarrer gratuit",
-    href: "/auth/register",
+    desc: "Pour démarrer simplement",
+    vehicles: "Jusqu'à 5 véhicules",
+    features: ["Jusqu'à 5 chauffeurs", "Gestion des documents", "Bilan financier", "Rappels automatiques"],
+    cta: "Contacter l'équipe",
+    href: "/contact-us",
     highlight: false,
   },
   {
-    name: "Pro",
-    price: "89 000",
+    name: "Business",
+    price: "12 000",
     period: "/ mois",
     desc: "Pour les flottes en croissance",
-    vehicles: "Jusqu'à 50 véhicules",
-    features: ["Tout Starter inclus", "Historique illimité", "Alertes illimitées", "Geofencing avancé", "Rapports PDF/Excel/CSV", "API REST", "Support prioritaire"],
-    cta: "Essayer 14 jours",
-    href: "/auth/register",
+    vehicles: "Jusqu'à 15 véhicules",
+    features: ["Jusqu'à 15 chauffeurs", "Gestion des documents", "Bilan financier", "Export PDF / Excel", "Rappels automatiques", "Jusqu'à 2 utilisateurs", "Support WhatsApp"],
+    cta: "Contacter l'équipe",
+    href: "/contact-us",
     highlight: true,
   },
   {
-    name: "Entreprise",
-    price: "Sur devis",
-    period: "",
-    desc: "Pour les grandes flottes et groupes",
-    vehicles: "Véhicules illimités",
-    features: ["Tout Pro inclus", "Multi-sites & multi-flottes", "SLA 99.9% garanti", "Intégration ERP/SAP", "Administrateur dédié", "Formation incluse", "Support 24/7"],
-    cta: "Nous contacter",
-    href: "/auth/register",
+    name: "Enterprise",
+    price: "25 000",
+    period: "/ mois",
+    desc: "Pour les grandes flottes",
+    vehicles: "Jusqu'à 40 véhicules",
+    features: ["Jusqu'à 40 chauffeurs", "Gestion des documents", "Bilan financier", "Export PDF / Excel", "Rappels automatiques", "Jusqu'à 5 utilisateurs", "Support prioritaire"],
+    cta: "Contacter l'équipe",
+    href: "/contact-us",
     highlight: false,
   },
 ];
 
-export default function PricingPage() {
+export default function Pricing() {
   return (
-    <div style={{ background: "var(--navy)" }} className="min-h-screen">
-      <div className="max-w-5xl mx-auto px-8 py-16">
+    <section id="pricing" style={{ background: "var(--navy)" }}>
+      <div className="max-w-6xl mx-auto px-8 py-16">
         <div className="text-center mb-12">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--cyan)" }}>Tarifs</p>
-          <h1 className="text-4xl font-bold mb-3" style={{ color: "var(--white-fleet)", letterSpacing: "-1.5px", fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-4xl font-bold mb-3" style={{ color: "var(--white-fleet)", letterSpacing: "-1.5px", fontFamily: "'Space Grotesk', sans-serif" }}>
             Simple et transparent
-          </h1>
+          </h2>
           <p className="text-sm" style={{ color: "var(--slate-2)" }}>Sans frais cachés · Essai 14 jours gratuit · Résiliation à tout moment</p>
         </div>
 
@@ -67,7 +67,7 @@ export default function PricingPage() {
                 </div>
               )}
               <div className="mb-6">
-                <h2 className="text-base font-bold mb-1" style={{ color: "var(--white-fleet)", fontFamily: "'Space Grotesk', sans-serif" }}>{name}</h2>
+                <h3 className="text-base font-bold mb-1" style={{ color: "var(--white-fleet)", fontFamily: "'Space Grotesk', sans-serif" }}>{name}</h3>
                 <p className="text-xs mb-4" style={{ color: "var(--slate)" }}>{desc}</p>
                 <div className="flex items-baseline gap-1">
                   <span className="text-3xl font-bold" style={{ color: "var(--white-fleet)", fontFamily: "'Space Grotesk', sans-serif" }}>{price}</span>
@@ -102,6 +102,6 @@ export default function PricingPage() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

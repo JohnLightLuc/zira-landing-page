@@ -4,7 +4,7 @@ import AppStoreButtons from "./AppStoreButtons";
 
 export function CTAFooter() {
   return (
-    <section style={{ background: "var(--navy)" }} className="pb-16">
+    <section style={{ background: "var(--navy)" }} className="py-16">
       <div className="max-w-6xl mx-auto px-8">
         <div
           className="rounded-2xl px-10 py-11 flex flex-col md:flex-row items-center justify-between gap-6"

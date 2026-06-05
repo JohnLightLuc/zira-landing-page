@@ -1,22 +1,43 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Fonctionnalités", href: "/#features" },
-  // { label: "Tableau de bord", href: "/dashboard" },
-  { label: "Tarifs", href: "/pricing" },
-  { label: "Documentation", href: "/docs" },
+  { label: "Tarifs", href: "/#pricing" },
+  { label: "Documentation", href: "/#docs" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
   const pathname = usePathname();
 
+  useEffect(() => {
+    if (pathname !== "/") return;
+    const ids = navLinks.map((l) => l.href.replace("/#", ""));
+    const observers: IntersectionObserver[] = [];
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
+        { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, [pathname]);
+
   const isActive = (href: string) => {
-    if (href === "/#features") return pathname === "/";
+    if (href.startsWith("/#")) {
+      return pathname === "/" && activeSection === href.replace("/#", "");
+    }
     return pathname.startsWith(href);
   };
 
@@ -65,18 +86,11 @@ export default function Navbar() {
         {/* CTA buttons */}
         <div className="hidden md:flex items-center gap-3">
           <Link
-            href="/auth/login"
-            className="text-sm font-medium transition-colors"
-            style={{ color: "var(--slate-2)", textDecoration: "none" }}
-          >
-            Connexion
-          </Link>
-          <Link
-            href="/auth/register"
+            href="/contact-us"
             className="text-sm font-semibold text-white px-5 py-2 rounded-lg transition-opacity hover:opacity-90 no-underline"
             style={{ background: "var(--blue)", fontFamily: "'Space Grotesk', sans-serif" }}
           >
-            Démarrer gratuit
+            Contacter l&apos;équipe
           </Link>
         </div>
 
@@ -119,18 +133,11 @@ export default function Navbar() {
           ))}
           <div className="flex gap-3 mt-3">
             <Link
-              href="/auth/login"
-              className="flex-1 text-sm font-medium text-center py-2.5 rounded-lg border"
-              style={{ color: "var(--white-2)", borderColor: "var(--border-2)", textDecoration: "none" }}
-            >
-              Connexion
-            </Link>
-            <Link
-              href="/auth/register"
+              href="/contact-us"
               className="flex-1 text-sm font-semibold text-white text-center py-2.5 rounded-lg"
               style={{ background: "var(--blue)", textDecoration: "none" }}
             >
-              Démarrer gratuit
+              Contacter l&apos;équipe
             </Link>
           </div>
         </div>

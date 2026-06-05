@@ -39,18 +39,17 @@ const sections = [
   },
 ];
 
-export default function DocsPage() {
+export default function Docs() {
   return (
-    <div style={{ background: "var(--navy)" }} className="min-h-screen">
-      <div className="max-w-5xl mx-auto px-8 py-16">
+    <section id="docs" style={{ background: "var(--navy-2)" }}>
+      <div className="max-w-6xl mx-auto px-8 py-16">
         <div className="mb-10">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--cyan)" }}>Documentation</p>
-          <h1 className="text-3xl font-bold mb-3" style={{ color: "var(--white-fleet)", letterSpacing: "-1px", fontFamily: "'Space Grotesk', sans-serif" }}>
-            Centre d'aide Zira
-          </h1>
+          <h2 className="text-3xl font-bold mb-3" style={{ color: "var(--white-fleet)", letterSpacing: "-1px", fontFamily: "'Space Grotesk', sans-serif" }}>
+            Centre d&apos;aide Zira
+          </h2>
           <p className="text-sm mb-6" style={{ color: "var(--slate-2)" }}>Guides, tutoriels et référence API pour tirer le meilleur de votre plateforme.</p>
 
-          {/* Search */}
           <div
             className="flex items-center gap-3 px-4 py-3 rounded-xl max-w-md"
             style={{ background: "var(--navy-2)", border: "1px solid var(--border-2)" }}
@@ -94,7 +93,6 @@ export default function DocsPage() {
           ))}
         </div>
 
-        {/* API CTA */}
         <div
           className="mt-8 rounded-2xl p-7 flex items-center justify-between flex-wrap gap-4"
           style={{ background: "var(--navy-3)", border: "1px solid var(--border-2)" }}
@@ -112,10 +110,10 @@ export default function DocsPage() {
             className="text-sm font-semibold px-5 py-2.5 rounded-xl no-underline"
             style={{ background: "var(--blue)", color: "white" }}
           >
-            Explorer l'API →
+            Explorer l&apos;API →
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -78,7 +78,7 @@ const alertItems = [
 
 export default function AlertsSection() {
   return (
-    <section style={{ background: "var(--navy)" }} className="py-16">
+    <section style={{ background: "var(--navy-2)" }} className="py-16">
       <div className="max-w-6xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
         {/* Left text */}
         <div>
